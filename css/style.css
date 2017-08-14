@@ -19,6 +19,10 @@ footer {
 	font-size: 14px;
 	letter-spacing: .08em;
 	font-weight: 500;
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	overflow: hidden;
 }
 
 h1 {
@@ -28,6 +32,15 @@ h1 {
 	font-weight: 400;
 	font-size: 45px;
 	margin: 0;
+	text-transform: uppercase;
+}
+
+h2 {
+	font-family: "Raleway";
+	color: #0D2C40;
+	letter-spacing: 1px;
+	font-weight: 600;
+	font-size: 35px;
 	text-transform: uppercase;
 }
 
@@ -50,9 +63,9 @@ img {
 }
 
 main {
-	width: 850px;
 	margin: 35px auto;
 	align-content: center;
+	width: 800px;
 }
 
 nav {
@@ -101,4 +114,12 @@ p {
 	text-decoration: none;
 	text-transform: uppercase;
 	padding: 0 20px;
+}
+
+.score {
+	display: block;
+}
+
+.wrapper {
+
 }
