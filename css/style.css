@@ -96,6 +96,11 @@ p {
 	font-family: "Raleway";
 }
 
+.ingameInfo {
+	font-family: "Droid Serif";
+	display: inline;
+};
+
 .message {
 	float: right;
 }
@@ -114,10 +119,6 @@ p {
 	text-decoration: none;
 	text-transform: uppercase;
 	padding: 0 20px;
-}
-
-.score {
-	display: block;
 }
 
 .wrapper {

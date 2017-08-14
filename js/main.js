@@ -57,12 +57,10 @@ var checkForMatch = function() {
 	for(var i = 1; i < cardsInPlay.length; i++){
 		if(cardToMatchAgainst[1] !== cardsInPlay[i][1]){
 			isMatch = false;
-			noMatch();
-			return;
+			return false;
 		}
 	}
-	match();
-	return;
+	return true;
 };
 
 async function flipCard() {
@@ -71,16 +69,23 @@ async function flipCard() {
 		var cardId = this.getAttribute("data-id");
 		cardsInPlay.push([cardId, cards[cardId].rank]);
 		this.setAttribute("src", cards[cardId].cardImage);
-		if(cardsInPlay.length === 2){
-			await sleep(1000);
-			checkForMatch();
-			updateCurrentScore();
+		if(cardsInPlay.length === 2){			
+			var isMatch = checkForMatch();
+			if(isMatch) {
+				currentScore += 10;
+				updateCurrentScore();
+				match();
+			} else {
+				currentScore -= 5;
+				updateCurrentScore();
+				await sleep(1000);
+				noMatch();
+			}
 		}
 	}
 }
 
 var match = function() {
-	currentScore += 10;
 	cardsInPlay.forEach(function(matchedCard) {
 		idsOfCardsFound.push(matchedCard[0]);
 	});
@@ -89,7 +94,6 @@ var match = function() {
 };
 
 var noMatch = function() {
-	currentScore -= 5;
 	cardsInPlay.forEach(function(cardToReset) {
 		var idOfCard = cardToReset[0];
 		if(!idsOfCardsFound.includes(idOfCard)){

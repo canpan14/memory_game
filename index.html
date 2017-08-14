@@ -24,9 +24,11 @@
 		<div class="wrapper">
 			<div id="game">
 				<h3>Game</h3>
-				<p class="score">High Score: <span id="highScore">0</span></p>
-				<p class="score">Current Score: <span id="score">0</span></p>
-				<button onclick="resetGame()" id="reset">Reset</button>	
+				<div class="ingameInfo">
+					<p class="highScore">High Score: <span id="highScore">0</span></p>
+					<p class="currentScore">Current Score: <span id="score">0</span></p>
+					<button onclick="resetGame()" id="reset">Reset</button>						
+				</div>
 				<div id="game-board" class="board"></div>
 			</div>
 		</div>
