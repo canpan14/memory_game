@@ -19,6 +19,10 @@ footer {
 	font-size: 14px;
 	letter-spacing: .08em;
 	font-weight: 500;
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	overflow: hidden;
 }
 
 h1 {
@@ -28,6 +32,15 @@ h1 {
 	font-weight: 400;
 	font-size: 45px;
 	margin: 0;
+	text-transform: uppercase;
+}
+
+h2 {
+	font-family: "Raleway";
+	color: #0D2C40;
+	letter-spacing: 1px;
+	font-weight: 600;
+	font-size: 35px;
 	text-transform: uppercase;
 }
 
@@ -46,13 +59,13 @@ header {
 }
 
 img {
-	margin: 40px 8px 0 8px;
+	margin: 5px 5px 0 5px;
 }
 
 main {
-	width: 850px;
 	margin: 35px auto;
 	align-content: center;
+	width: 750px;
 }
 
 nav {
@@ -64,6 +77,12 @@ p {
 	font-family: "Droid Serif";
 	line-height: 26px;
 	font-size: 18px;
+}
+
+.board {
+	border: solid black 2px;
+	display: inline-block;
+	margin: auto;
 }
 
 .copyright {
@@ -81,6 +100,20 @@ p {
 
 .copyright, .message {
 	font-family: "Raleway";
+}
+
+.currentScore {
+
+}
+
+.highScore {
+	float: left;
+}
+
+.ingameInfo {
+	font-family: "Droid Serif";
+	display: block;
+	margin: 0 0 10px 0;
 }
 
 .message {
@@ -101,4 +134,12 @@ p {
 	text-decoration: none;
 	text-transform: uppercase;
 	padding: 0 20px;
+}
+
+.resetButton {
+	float: right;
+}
+
+.wrapper {
+
 }
