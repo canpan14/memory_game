@@ -65,7 +65,7 @@ var checkForMatch = function() {
 	return;
 };
 
-var flipCard = function() {
+async function flipCard() {
 	this.removeEventListener("click", flipCard);
 	var cardId = this.getAttribute("data-id");
 	cardsInPlay.push([cardId, cards[cardId].rank]);
