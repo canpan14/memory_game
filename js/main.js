@@ -66,16 +66,18 @@ var checkForMatch = function() {
 };
 
 async function flipCard() {
-	this.removeEventListener("click", flipCard);
-	var cardId = this.getAttribute("data-id");
-	cardsInPlay.push([cardId, cards[cardId].rank]);
-	this.setAttribute("src", cards[cardId].cardImage);
-	if(cardsInPlay.length === 2){
-		await sleep(1000);
-		checkForMatch();
-		updateCurrentScore();
+	if(cardsInPlay.length < 2) {
+		this.removeEventListener("click", flipCard);
+		var cardId = this.getAttribute("data-id");
+		cardsInPlay.push([cardId, cards[cardId].rank]);
+		this.setAttribute("src", cards[cardId].cardImage);
+		if(cardsInPlay.length === 2){
+			await sleep(1000);
+			checkForMatch();
+			updateCurrentScore();
+		}
 	}
-};
+}
 
 var match = function() {
 	currentScore += 10;
@@ -103,18 +105,18 @@ var checkForEndOfGame = function() {
 		updateHighScore();
 		resetGame();
 	}
-}
+};
 
 var updateCurrentScore = function() {
 	document.getElementById("score").textContent = currentScore;
-}
+};
 
 var updateHighScore = function() {
 	var currentHighScore = document.getElementById("highScore").textContent;
 	if(currentScore > currentHighScore) {
 		document.getElementById("highScore").textContent = currentScore;
 	}
-}
+};
 
 var createBoard = function() {
 	for(var i = 0; i < cards.length; i++){
@@ -136,7 +138,7 @@ function shuffle(a) {
         let j = Math.floor(Math.random() * i);
         [a[i - 1], a[j]] = [a[j], a[i - 1]];
     }
-};
+}
 
 function resetGame() {
 	shuffle(cards);
