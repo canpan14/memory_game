@@ -70,7 +70,7 @@ main {
 
 nav {
 	background-color: #00A6B3;
-	padding: 20px 0;
+	padding: 10px 0;
 }
 
 p {
@@ -103,17 +103,23 @@ p {
 }
 
 .currentScore {
-
+	background-color: white;
+	color: #F15B31;
 }
 
 .highScore {
 	float: left;
+	background-color: white;
+	color: #F15B31;
 }
 
 .ingameInfo {
 	font-family: "Droid Serif";
 	display: block;
-	margin: 0 0 10px 0;
+	background-color: #00A6B3;
+	border: black 4px solid;
+	padding: 10px 0;
+	margin: 0 0 10px;
 }
 
 .message {

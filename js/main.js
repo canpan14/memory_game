@@ -53,9 +53,9 @@ function sleep(ms) {
 
 var checkForMatch = function() {
 	var isMatch = false;
-	var cardToMatchAgainst = cardsInPlay[0];
+	var cardToMatchAgainst = cards[cardsInPlay[0][0]];
 	for(var i = 1; i < cardsInPlay.length; i++){
-		if(cardToMatchAgainst[1] !== cardsInPlay[i][1]){
+		if(cardToMatchAgainst.rank !== cardsInPlay[i][1] || cardToMatchAgainst.suit !== cards[cardsInPlay[i][0]].suit){
 			isMatch = false;
 			return false;
 		}
@@ -107,9 +107,8 @@ var noMatch = function() {
 var checkForEndOfGame = function() {
 	if(idsOfCardsFound.length === cards.length) {
 		updateHighScore();
-		resetGame();
 	}
-};
+}
 
 var updateCurrentScore = function() {
 	document.getElementById("score").textContent = currentScore;
