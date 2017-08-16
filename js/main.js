@@ -50,7 +50,6 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-
 var checkForMatch = function() {
 	var isMatch = false;
 	var cardToMatchAgainst = cards[cardsInPlay[0][0]];
