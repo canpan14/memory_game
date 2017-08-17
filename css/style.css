@@ -82,7 +82,8 @@ p {
 .board {
 	border: solid black 2px;
 	display: inline-block;
-	margin: auto;
+	box-sizing: border-box;
+	width: 750px;
 }
 
 .copyright {
@@ -102,7 +103,7 @@ p {
 	font-family: "Raleway";
 }
 
-.currentScore , .highScore, .resetButton {
+.currentScore , .highScore, .level, .nextLevelButton, .resetHighScoreButton, .resetGameButton {
   	font-size: 20px;
 	display: inline-block;
 	background-color: white;
@@ -144,19 +145,20 @@ p {
 	padding: 0 20px;
 }
 
-.resetButton {
+.nextLevelButton, .resetHighScoreButton, .resetGameButton {
 	color: #FFFFFF;
 	background-color: #F15B31;
 	border: none;
-
+	font-weight: bold;
 }
 
-.resetButton:hover {
+.nextLevelButton:hover, .resetHighScoreButton:hover, .resetGameButton:hover {
 	background-color: #924D31;
 }
 
-.wrapper {
-
+.nextLevelButton:disabled {
+	background-color: #666666;
+	color: #CCCCCC;
 }
 
 .ingameInfo {

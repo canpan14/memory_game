@@ -21,15 +21,18 @@
 			<h3>Instructions</h3>
 			<p>Concentration, also known as Match Match, Memory, Pelmanism, Shinkei-suijaku, Pexeso or simply Pairs, is a card game in which all of the cards are laid face down on a surface and two cards are flipped face up over each turn. The object of the game is to turn over pairs of matching cards.</p>
 		</div>
-		<div class="wrapper">
-			<div id="game">
-				<h3>Memory: The Card Game</h3>
-				<div class="ingameInfo">
-					<span class="highScore">High Score: <span id="highScore">0</span></span>
-					<span class="currentScore">Current Score: <span id="score">0</span></span>
-					<button class="resetButton" onclick="resetGame()" id="reset">Reset Board</button>
-				</div>
-				<div id="game-board" class="board clearfix"></div>
+		<div id="game">
+			<h3>Memory: The Card Game</h3>
+			<div class="ingameInfo">
+				<span class="highScore">High Score: <span id="highScore">0</span></span>
+				<span class="currentScore">Current Score: <span id="score">0</span></span>
+				<button class="nextLevelButton" onclick="nextLevel()" id="nextLevel" disabled>Next Level</button>
+			</div>
+			<div id="game-board" class="board clearfix"></div>
+			<div class="ingameInfo">
+				<button class="resetHighScoreButton" onclick="resetHighScore()">Reset High Score</button>
+				<button class="resetGameButton" onclick="resetGame()">Reset Game</button>
+				<span class="level">Level: <span id="level">1</span>
 			</div>
 		</div>
 	</main>
@@ -37,6 +40,7 @@
 		<p class="copyright">Copyright 2017</p>
 		<p class="message">Created with &hearts; by <span class="name">GA</span></p>
 	</footer>
+	<script src="js/cardsForLevels.js"></script>
 	<script src="js/main.js"></script>
 </body>
 </html>

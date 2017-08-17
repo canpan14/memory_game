@@ -1,47 +1,9 @@
-var cards = [
-{
-	rank: "queen",
-	suit: "hearts",
-	cardImage: "images/queen-of-hearts.png"
-},
-{
-	rank: "queen",
-	suit: "diamonds",
-	cardImage: "images/queen-of-diamonds.png"
-},
-{
-	rank: "king",
-	suit: "hearts",
-	cardImage: "images/king-of-hearts.png"
-},
-{
-	rank: "king",
-	suit: "diamonds",
-	cardImage: "images/king-of-diamonds.png"
-},
-{
-	rank: "queen",
-	suit: "hearts",
-	cardImage: "images/queen-of-hearts.png"
-},
-{
-	rank: "queen",
-	suit: "diamonds",
-	cardImage: "images/queen-of-diamonds.png"
-},
-{
-	rank: "king",
-	suit: "hearts",
-	cardImage: "images/king-of-hearts.png"
-},
-{
-	rank: "king",
-	suit: "diamonds",
-	cardImage: "images/king-of-diamonds.png"
-}];
+var cards = [];
 var cardsInPlay = [];
 var idsOfCardsFound = [];
 var currentScore = 0;
+var currentLevel = 1;
+var maxLevel = 2;
 
 /*
  * https://stackoverflow.com/questions/951021/what-is-the-javascript-version-of-sleep
@@ -105,7 +67,13 @@ var noMatch = function() {
 
 var checkForEndOfGame = function() {
 	if(idsOfCardsFound.length === cards.length) {
-		updateHighScore();
+		if(currentLevel !== maxLevel) {
+			document.getElementById("nextLevel").disabled = false;
+			updateHighScore();
+		} else {
+			// Other end of game stuff
+			updateHighScore();
+		}
 	}
 }
 
@@ -114,11 +82,25 @@ var updateCurrentScore = function() {
 };
 
 var updateHighScore = function() {
-	var currentHighScore = document.getElementById("highScore").textContent;
-	if(currentScore > currentHighScore) {
+	var currentHighScore = localStorage.getItem("highScore");
+	if(currentHighScore !== null) {
+		if(currentScore > currentHighScore) {
+			localStorage.setItem("highScore", currentScore);
+			document.getElementById("highScore").textContent = currentScore;
+		}
+	} else {
+		localStorage.setItem("highScore", currentScore);
 		document.getElementById("highScore").textContent = currentScore;
 	}
 };
+
+var updateLevel = function() {
+	if(currentLevel !== maxLevel) {
+		document.getElementById("level").textContent = currentLevel;
+	} else {
+		document.getElementById("level").textContent = currentLevel + " (Last)";
+	}
+}
 
 var createBoard = function() {
 	for(var i = 0; i < cards.length; i++){
@@ -128,6 +110,13 @@ var createBoard = function() {
 		cardToAdd.addEventListener("click", flipCard);
 		document.getElementById("game-board").appendChild(cardToAdd);
 	}
+};
+
+var initializeHighScoreDisplay = function() {
+	if(localStorage.getItem("highScore") === null) {
+		localStorage.setItem("highScore", 0);
+	}
+	document.getElementById("highScore").textContent = localStorage.getItem("highScore");
 };
 
 /**
@@ -142,7 +131,26 @@ function shuffle(a) {
     }
 }
 
+function nextLevel() {
+	document.getElementById("nextLevel").disabled = true;
+	var cardElements = document.getElementById("game-board").childNodes;
+	cardsInPlay.length = 0;
+	idsOfCardsFound.length = 0;
+	for(var i = cardElements.length - 1; i >= 0; i--){
+		cardElements[i].remove();
+	}
+	currentLevel += 1;
+	updateLevel();
+	cards = getCardsForLevel(currentLevel);
+	shuffle(cards);
+	createBoard();
+}
+
 function resetGame() {
+	document.getElementById("nextLevel").disabled = true;
+	currentLevel = 1;
+	updateLevel();
+	cards = getCardsForLevel(1);
 	shuffle(cards);
 	var cardElements = document.getElementById("game-board").childNodes;
 	cardsInPlay.length = 0;
@@ -155,5 +163,13 @@ function resetGame() {
 	createBoard();
 }
 
+function resetHighScore() {
+	localStorage.setItem("highScore", 0);
+	document.getElementById("highScore").textContent = "0";
+}
+
+cards = getCardsForLevel(currentLevel);
 shuffle(cards);
 createBoard();
+initializeHighScoreDisplay();
+
