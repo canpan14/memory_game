@@ -3,7 +3,8 @@ var cardsInPlay = [];
 var idsOfCardsFound = [];
 var currentScore = 0;
 var currentLevel = 1;
-var maxLevel = 2;
+var maxLevel = 3;
+var cardBackSrc = "images/back.bmp";
 
 /*
  * https://stackoverflow.com/questions/951021/what-is-the-javascript-version-of-sleep
@@ -39,7 +40,7 @@ async function flipCard() {
 			} else {
 				currentScore -= 5;
 				updateCurrentScore();
-				await sleep(1000);
+				await sleep(1250);
 				noMatch();
 			}
 		}
@@ -58,7 +59,7 @@ var noMatch = function() {
 	cardsInPlay.forEach(function(cardToReset) {
 		var idOfCard = cardToReset[0];
 		if(!idsOfCardsFound.includes(idOfCard)){
-			document.querySelector('[data-id=\"' + idOfCard + '\"]').setAttribute("src", "images/back.png");
+			document.querySelector('[data-id=\"' + idOfCard + '\"]').setAttribute("src", cardBackSrc);
 			document.querySelector('[data-id=\"' + idOfCard + '\"]').addEventListener("click", flipCard);
 		}
 	});
@@ -105,12 +106,28 @@ var updateLevel = function() {
 var createBoard = function() {
 	for(var i = 0; i < cards.length; i++){
 		var cardToAdd = document.createElement("img");
-		cardToAdd.setAttribute("src", "images/back.png");
+		cardToAdd.setAttribute("src", cardBackSrc);
 		cardToAdd.setAttribute("data-id", i);
 		cardToAdd.addEventListener("click", flipCard);
 		document.getElementById("game-board").appendChild(cardToAdd);
 	}
+	resizeCards();
 };
+
+var resizeCards = function() {
+	var cardElements = document.getElementsByTagName('img');
+	var cardWidth = "182px";
+	if(cardElements.length === 4 || cardElements.length === 8) {
+		cardWidth = "182px";
+	} else if(cardElements.length % 8 === 0) {
+		cardWidth = "89px";
+	} else if(cardElements.length % 6 == 0) {
+		cardWidth = "120px";
+	} 
+	for(let i = 0; i < cardElements.length; i++){
+		cardElements[i].style.width = cardWidth;
+	}
+}
 
 var initializeHighScoreDisplay = function() {
 	if(localStorage.getItem("highScore") === null) {

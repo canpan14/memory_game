@@ -59,7 +59,8 @@ header {
 }
 
 img {
-	margin: 5px 5px 0 5px;
+	margin: 5px 2px 0 2px;
+	height: auto;
 }
 
 main {
@@ -109,9 +110,10 @@ p {
 	background-color: white;
 	color: #F15B31;
   	text-transform: uppercase;
-	width: 240px; 
+	width: 220px; 
 	border-radius: 20px;
-  	padding: 10px 0;
+  	padding: 1px 0;
+  	margin: 0 10px;
   	vertical-align: middle
 }
 

@@ -6,6 +6,9 @@ function getCardsForLevel(levelNumber) {
 	case 2:
 		return levelTwo();
 		break;
+	case 3:
+		return levelThree();
+		break;
 	default:
 		return [];
 	}
@@ -19,22 +22,44 @@ function card(rank, suit, cardImage){
 
 function levelOne() {
 	var cardsToReturn = [];
-	cardsToReturn.push(new card("king","diamonds","images/king-of-diamonds.png"));
-	cardsToReturn.push(new card("king","diamonds","images/king-of-diamonds.png"));
-	cardsToReturn.push(new card("queen","hearts","images/queen-of-hearts.png"));
-	cardsToReturn.push(new card("queen","hearts","images/queen-of-hearts.png"));
+	cardsToReturn.push(new card("king","diamonds","images/king-of-diamonds.bmp"));
+	cardsToReturn.push(new card("king","diamonds","images/king-of-diamonds.bmp"));
+	cardsToReturn.push(new card("queen","hearts","images/queen-of-hearts.bmp"));
+	cardsToReturn.push(new card("queen","hearts","images/queen-of-hearts.bmp"));
 	return cardsToReturn;
 }
 
 function levelTwo() {
 	var cardsToReturn = [];
-	cardsToReturn.push(new card("king","diamonds","images/king-of-diamonds.png"));
-	cardsToReturn.push(new card("king","diamonds","images/king-of-diamonds.png"));
-	cardsToReturn.push(new card("queen","hearts","images/queen-of-hearts.png"));
-	cardsToReturn.push(new card("queen","hearts","images/queen-of-hearts.png"));
-	cardsToReturn.push(new card("king","hearts","images/king-of-hearts.png"));
-	cardsToReturn.push(new card("king","hearts","images/king-of-hearts.png"));
-	cardsToReturn.push(new card("queen","diamonds","images/queen-of-diamonds.png"));
-	cardsToReturn.push(new card("queen","diamonds","images/queen-of-diamonds.png"));
+	cardsToReturn.push(new card("king","diamonds","images/king-of-diamonds.bmp"));
+	cardsToReturn.push(new card("king","diamonds","images/king-of-diamonds.bmp"));
+	cardsToReturn.push(new card("queen","hearts","images/queen-of-hearts.bmp"));
+	cardsToReturn.push(new card("queen","hearts","images/queen-of-hearts.bmp"));
+	cardsToReturn.push(new card("king","spades","images/king-of-spades.bmp"));
+	cardsToReturn.push(new card("king","spades","images/king-of-spades.bmp"));
+	cardsToReturn.push(new card("queen","clubs","images/queen-of-clubs.bmp"));
+	cardsToReturn.push(new card("queen","clubs","images/queen-of-clubs.bmp"));
+	return cardsToReturn;
+}
+
+function levelThree() {
+	var cardsToReturn = [];
+	cardsToReturn.push(new card("king","diamonds","images/king-of-diamonds.bmp"));
+	cardsToReturn.push(new card("king","diamonds","images/king-of-diamonds.bmp"));
+	cardsToReturn.push(new card("queen","hearts","images/queen-of-hearts.bmp"));
+	cardsToReturn.push(new card("queen","hearts","images/queen-of-hearts.bmp"));
+	cardsToReturn.push(new card("king","spades","images/king-of-spades.bmp"));
+	cardsToReturn.push(new card("king","spades","images/king-of-spades.bmp"));
+	cardsToReturn.push(new card("queen","clubs","images/queen-of-clubs.bmp"));
+	cardsToReturn.push(new card("queen","clubs","images/queen-of-clubs.bmp"));
+
+	cardsToReturn.push(new card("jack","diamonds","images/jack-of-diamonds.bmp"));
+	cardsToReturn.push(new card("jack","diamonds","images/jack-of-diamonds.bmp"));
+	cardsToReturn.push(new card("jack","hearts","images/jack-of-hearts.bmp"));
+	cardsToReturn.push(new card("jack","hearts","images/jack-of-hearts.bmp"));
+	cardsToReturn.push(new card("ace","spades","images/ace-of-spades.bmp"));
+	cardsToReturn.push(new card("ace","spades","images/ace-of-spades.bmp"));
+	cardsToReturn.push(new card("ace","clubs","images/ace-of-clubs.bmp"));
+	cardsToReturn.push(new card("ace","clubs","images/ace-of-clubs.bmp"));
 	return cardsToReturn;
 }
