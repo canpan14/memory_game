@@ -4,7 +4,7 @@ var idsOfCardsFound = [];
 var currentScore = 0;
 var currentLevel = 1;
 var maxLevel = 3;
-var cardBackSrc = "images/red-back.jpg";
+var cardBackSrc = "images/blue-back.gif";
 var resetWhileSleeping = false;
 
 /*
@@ -72,6 +72,7 @@ var noMatch = function() {
 
 var checkForEndOfGame = function() {
 	if(idsOfCardsFound.length === cards.length) {
+		document.getElementById("game-board").style['background-color'] = "#74f77f";
 		if(currentLevel !== maxLevel) {
 			document.getElementById("nextLevel").disabled = false;
 			updateHighScore();
@@ -154,6 +155,7 @@ function shuffle(a) {
 
 function nextLevel() {
 	document.getElementById("nextLevel").disabled = true;
+	document.getElementById("game-board").style['background-color'] = "#FFFFFF";
 	var cardElements = document.getElementById("game-board").childNodes;
 	cardsInPlay.length = 0;
 	idsOfCardsFound.length = 0;
@@ -170,6 +172,7 @@ function nextLevel() {
 function resetGame() {
 	resetWhileSleeping = true;
 	document.getElementById("nextLevel").disabled = true;
+	document.getElementById("game-board").style['background-color'] = "#FFFFFF";
 	currentLevel = 1;
 	updateLevel();
 	cards = getCardsForLevel(1);
