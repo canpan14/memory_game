@@ -4,7 +4,8 @@ var idsOfCardsFound = [];
 var currentScore = 0;
 var currentLevel = 1;
 var maxLevel = 3;
-var cardBackSrc = "images/back.bmp";
+var cardBackSrc = "images/red-back.jpg";
+var resetWhileSleeping = false;
 
 /*
  * https://stackoverflow.com/questions/951021/what-is-the-javascript-version-of-sleep
@@ -38,10 +39,13 @@ async function flipCard() {
 				updateCurrentScore();
 				match();
 			} else {
+				resetWhileSleeping = false;
 				currentScore -= 5;
 				updateCurrentScore();
 				await sleep(1250);
-				noMatch();
+				if(!resetWhileSleeping) {
+					noMatch();
+				}
 			}
 		}
 	}
@@ -116,13 +120,13 @@ var createBoard = function() {
 
 var resizeCards = function() {
 	var cardElements = document.getElementsByTagName('img');
-	var cardWidth = "182px";
+	var cardWidth = "178px";
 	if(cardElements.length === 4 || cardElements.length === 8) {
-		cardWidth = "182px";
+		cardWidth = "178px";
 	} else if(cardElements.length % 8 === 0) {
-		cardWidth = "89px";
+		cardWidth = "85px";
 	} else if(cardElements.length % 6 == 0) {
-		cardWidth = "120px";
+		cardWidth = "116px";
 	} 
 	for(let i = 0; i < cardElements.length; i++){
 		cardElements[i].style.width = cardWidth;
@@ -164,6 +168,7 @@ function nextLevel() {
 }
 
 function resetGame() {
+	resetWhileSleeping = true;
 	document.getElementById("nextLevel").disabled = true;
 	currentLevel = 1;
 	updateLevel();
