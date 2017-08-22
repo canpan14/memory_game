@@ -111,6 +111,7 @@ var updateLevel = function() {
 var createBoard = function() {
 	for(var i = 0; i < cards.length; i++){
 		var cardToAdd = document.createElement("img");
+		cardToAdd.setAttribute("class", "card");
 		cardToAdd.setAttribute("src", cardBackSrc);
 		cardToAdd.setAttribute("data-id", i);
 		cardToAdd.addEventListener("click", flipCard);
