@@ -59,7 +59,8 @@ header {
 }
 
 img {
-	margin: 5px 5px 0 5px;
+	margin: 5px 2px 0 2px;
+	height: auto;
 }
 
 main {
@@ -70,7 +71,7 @@ main {
 
 nav {
 	background-color: #00A6B3;
-	padding: 20px 0;
+	padding: 10px 0;
 }
 
 p {
@@ -82,7 +83,8 @@ p {
 .board {
 	border: solid black 2px;
 	display: inline-block;
-	margin: auto;
+	box-sizing: border-box;
+	width: 750px;
 }
 
 .copyright {
@@ -102,18 +104,26 @@ p {
 	font-family: "Raleway";
 }
 
-.currentScore {
-
-}
-
-.highScore {
-	float: left;
+.currentScore , .highScore, .level, .nextLevelButton, .resetHighScoreButton, .resetGameButton {
+	font-family: "system-ui";
+  	font-size: 20px;
+	display: inline-block;
+	background-color: white;
+	color: #F15B31;
+  	text-transform: uppercase;
+	width: 220px; 
+	border-radius: 20px;
+  	padding: 1px 0;
+  	margin: 0 10px;
+  	vertical-align: middle
 }
 
 .ingameInfo {
-	font-family: "Droid Serif";
 	display: block;
-	margin: 0 0 10px 0;
+	background-color: #00A6B3;
+	border: black 2px solid;
+ 	font-size: 11px;
+	text-transform: uppercase;
 }
 
 .message {
@@ -136,10 +146,18 @@ p {
 	padding: 0 20px;
 }
 
-.resetButton {
-	float: right;
+.nextLevelButton, .resetHighScoreButton, .resetGameButton {
+	color: #FFFFFF;
+	background-color: #F15B31;
+	border: none;
+	font-weight: bold;
 }
 
-.wrapper {
+.nextLevelButton:hover, .resetHighScoreButton:hover, .resetGameButton:hover {
+	background-color: #924D31;
+}
 
+.nextLevelButton:disabled {
+	background-color: #666666;
+	color: #CCCCCC;
 }
