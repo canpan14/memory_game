@@ -22,43 +22,43 @@ function card(rank, suit, cardImage){
 
 function levelOne() {
 	var cardsToReturn = [];
-	cardsToReturn.push(new card("king","diamonds","images/kd.svg"));
-	cardsToReturn.push(new card("king","diamonds","images/kd.svg"));
-	cardsToReturn.push(new card("queen","hearts","images/qh.svg"));
-	cardsToReturn.push(new card("queen","hearts","images/qh.svg"));
+	cardsToReturn.push(new card("king","diamonds","images/KD.svg"));
+	cardsToReturn.push(new card("king","diamonds","images/KD.svg"));
+	cardsToReturn.push(new card("queen","hearts","images/QH.svg"));
+	cardsToReturn.push(new card("queen","hearts","images/QH.svg"));
 	return cardsToReturn;
 }
 
 function levelTwo() {
 	var cardsToReturn = [];
-	cardsToReturn.push(new card("king","diamonds","images/kd.svg"));
-	cardsToReturn.push(new card("king","diamonds","images/kd.svg"));
-	cardsToReturn.push(new card("queen","hearts","images/qh.svg"));
-	cardsToReturn.push(new card("queen","hearts","images/qh.svg"));
-	cardsToReturn.push(new card("king","spades","images/ks.svg"));
-	cardsToReturn.push(new card("king","spades","images/ks.svg"));
-	cardsToReturn.push(new card("queen","clubs","images/qc.svg"));
-	cardsToReturn.push(new card("queen","clubs","images/qc.svg"));
+	cardsToReturn.push(new card("king","diamonds","images/KD.svg"));
+	cardsToReturn.push(new card("king","diamonds","images/KD.svg"));
+	cardsToReturn.push(new card("queen","hearts","images/QH.svg"));
+	cardsToReturn.push(new card("queen","hearts","images/QH.svg"));
+	cardsToReturn.push(new card("king","spades","images/KS.svg"));
+	cardsToReturn.push(new card("king","spades","images/KS.svg"));
+	cardsToReturn.push(new card("queen","clubs","images/QC.svg"));
+	cardsToReturn.push(new card("queen","clubs","images/QC.svg"));
 	return cardsToReturn;
 }
 
 function levelThree() {
 	var cardsToReturn = [];
-	cardsToReturn.push(new card("king","diamonds","images/kd.svg"));
-	cardsToReturn.push(new card("king","diamonds","images/kd.svg"));
-	cardsToReturn.push(new card("queen","hearts","images/qh.svg"));
-	cardsToReturn.push(new card("queen","hearts","images/qh.svg"));
-	cardsToReturn.push(new card("king","spades","images/ks.svg"));
-	cardsToReturn.push(new card("king","spades","images/ks.svg"));
-	cardsToReturn.push(new card("queen","clubs","images/qc.svg"));
-	cardsToReturn.push(new card("queen","clubs","images/qc.svg"));
-	cardsToReturn.push(new card("jack","diamonds","images/jd.svg"));
-	cardsToReturn.push(new card("jack","diamonds","images/jd.svg"));
-	cardsToReturn.push(new card("jack","hearts","images/jh.svg"));
-	cardsToReturn.push(new card("jack","hearts","images/jh.svg"));
-	cardsToReturn.push(new card("ace","spades","images/as.svg"));
-	cardsToReturn.push(new card("ace","spades","images/as.svg"));
-	cardsToReturn.push(new card("ace","clubs","images/ac.svg"));
-	cardsToReturn.push(new card("ace","clubs","images/ac.svg"));
+	cardsToReturn.push(new card("king","diamonds","images/KD.svg"));
+	cardsToReturn.push(new card("king","diamonds","images/KD.svg"));
+	cardsToReturn.push(new card("queen","hearts","images/QH.svg"));
+	cardsToReturn.push(new card("queen","hearts","images/QH.svg"));
+	cardsToReturn.push(new card("king","spades","images/KS.svg"));
+	cardsToReturn.push(new card("king","spades","images/KS.svg"));
+	cardsToReturn.push(new card("queen","clubs","images/QC.svg"));
+	cardsToReturn.push(new card("queen","clubs","images/QC.svg"));
+	cardsToReturn.push(new card("jack","diamonds","images/JD.svg"));
+	cardsToReturn.push(new card("jack","diamonds","images/JD.svg"));
+	cardsToReturn.push(new card("jack","hearts","images/JH.svg"));
+	cardsToReturn.push(new card("jack","hearts","images/JH.svg"));
+	cardsToReturn.push(new card("ace","spades","images/AS.svg"));
+	cardsToReturn.push(new card("ace","spades","images/AS.svg"));
+	cardsToReturn.push(new card("ace","clubs","images/AC.svg"));
+	cardsToReturn.push(new card("ace","clubs","images/AC.svg"));
 	return cardsToReturn;
 }
