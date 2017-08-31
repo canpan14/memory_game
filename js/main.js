@@ -122,13 +122,13 @@ var createBoard = function() {
 
 var resizeCards = function() {
 	var cardElements = document.getElementsByTagName('img');
-	var cardWidth = "178px";
+	var cardWidth = "25%";
 	if(cardElements.length === 4 || cardElements.length === 8) {
-		cardWidth = "178px";
+		cardWidth = "25%";
 	} else if(cardElements.length % 8 === 0) {
-		cardWidth = "85px";
+		cardWidth = "12.5%";
 	} else if(cardElements.length % 6 == 0) {
-		cardWidth = "116px";
+		cardWidth = "16.6%";
 	} 
 	for(let i = 0; i < cardElements.length; i++){
 		cardElements[i].style.width = cardWidth;

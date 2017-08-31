@@ -84,8 +84,9 @@ p {
 }
 
 .card {
-	margin: 5px 2px 0 2px;
+	padding: 5px 2px 0 2px;
 	height: auto;
+	box-sizing: border-box;
 }
 
 .copyright {
