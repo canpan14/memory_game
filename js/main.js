@@ -111,6 +111,7 @@ var updateLevel = function() {
 var createBoard = function() {
 	for(var i = 0; i < cards.length; i++){
 		var cardToAdd = document.createElement("img");
+		cardToAdd.setAttribute("class", "card");
 		cardToAdd.setAttribute("src", cardBackSrc);
 		cardToAdd.setAttribute("data-id", i);
 		cardToAdd.addEventListener("click", flipCard);
@@ -121,13 +122,13 @@ var createBoard = function() {
 
 var resizeCards = function() {
 	var cardElements = document.getElementsByTagName('img');
-	var cardWidth = "178px";
+	var cardWidth = "25%";
 	if(cardElements.length === 4 || cardElements.length === 8) {
-		cardWidth = "178px";
+		cardWidth = "25%";
 	} else if(cardElements.length % 8 === 0) {
-		cardWidth = "85px";
+		cardWidth = "12.5%";
 	} else if(cardElements.length % 6 == 0) {
-		cardWidth = "116px";
+		cardWidth = "16.6%";
 	} 
 	for(let i = 0; i < cardElements.length; i++){
 		cardElements[i].style.width = cardWidth;

@@ -22,8 +22,8 @@ function card(rank, suit, cardImage){
 
 function levelOne() {
 	var cardsToReturn = [];
-	cardsToReturn.push(new card("king","diamonds","images/KD.svg"));
-	cardsToReturn.push(new card("king","diamonds","images/KD.svg"));
+	cardsToReturn.push(new card("king","spades","images/KS.svg"));
+	cardsToReturn.push(new card("king","spades","images/KS.svg"));
 	cardsToReturn.push(new card("queen","hearts","images/QH.svg"));
 	cardsToReturn.push(new card("queen","hearts","images/QH.svg"));
 	return cardsToReturn;
